@@ -1,34 +1,25 @@
 {
-  "name": "v4",
-  "description": "Personal Website V4",
+  "name": "mbgu-hmg-web",
+  "description": "MBGU HMG Website",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Aryan <your-email@example.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/AryanPROFFESOR/MBGU_HMG_WEB"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "portfolio",
+    "hmg"
   ],
   "license": "MIT",
-  "browserslist": "> 0.25%, not dead",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "prepare": "husky install",
-    "lint-staged": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,css,json,md}": [
-      "prettier --write"
-    ],
-    "*.js": [
-      "eslint --fix"
-    ]
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "animejs": "^3.1.0",
@@ -58,14 +49,13 @@
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.3.0",
     "scrollreveal": "^4.0.5",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.0",
+    "gh-pages": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/eslint-parser": "^7.13.14",
     "@babel/preset-react": "^7.13.13",
-    "@upstatement/eslint-config": "^1.0.0",
-    "@upstatement/prettier-config": "^1.0.0",
     "babel-preset-gatsby": "^1.4.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
