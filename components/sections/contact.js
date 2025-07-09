@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { srConfig, email } from '@config';
-import sr from '@utils/sr';
-import { usePrefersReducedMotion } from '@hooks';
+import { email } from '@config';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -21,11 +19,7 @@ const StyledContactSection = styled.section`
     font-size: var(--fz-md);
     font-weight: 400;
 
-    &:before {
-      bottom: 0;
-      font-size: var(--fz-sm);
-    }
-
+    &:before,
     &:after {
       display: none;
     }
@@ -41,34 +35,20 @@ const StyledContactSection = styled.section`
   }
 `;
 
-const Contact = () => {
-  const revealContainer = useRef(null);
-  const prefersReducedMotion = usePrefersReducedMotion();
+const Contact = () => (
+  <StyledContactSection id="contact">
+    <h2 className="overline">What’s Next?</h2>
 
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
+    <h2 className="title">Get in Touch</h2>
 
-    sr.reveal(revealContainer.current, srConfig());
-  }, []);
+    <p>
+      Welcome to the Human Molecular Genetics Lab! We are dedicated to advancing the field of molecular genetics through our cutting-edge research and innovative approach. Our team is committed to making groundbreaking discoveries that will shape the future of genetic research. Feel free to reach out to us with any inquiries or to learn more about our work.
+    </p>
 
-  return (
-    <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What’s Next?</h2>
-
-      <h2 className="title">Get In Touch</h2>
-
-      <p>
-        Although I’m not currently looking for any new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-      </p>
-
-      <a className="email-link" href={`mailto:${email}`}>
-        Say Hello
-      </a>
-    </StyledContactSection>
-  );
-};
+    <a className="email-link" href={`mailto:${email}`}>
+      Say Hello
+    </a>
+  </StyledContactSection>
+);
 
 export default Contact;
