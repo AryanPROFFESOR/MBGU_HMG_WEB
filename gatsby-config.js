@@ -7,8 +7,8 @@ module.exports = {
     title: 'MBGU HMG Website',
     description: 'MBGU HMG is a platform showcasing amazing projects and initiatives.',
     siteUrl: 'https://aryanproffesor.github.io/MBGU_HMG_WEB', // Your GitHub Pages URL
-    image: '/og.png', // Make sure this image exists in "static" folder or update the path
-    twitterUsername: '@yourtwitterhandle', // Change or remove if you want
+    image: '/og.png',
+    twitterUsername: '@yourtwitterhandle',
   },
 
   plugins: [
@@ -24,11 +24,11 @@ module.exports = {
       options: {
         name: 'MBGU HMG Website',
         short_name: 'HMG',
-        start_url: '/',
+        start_url: '/MBGU_HMG_WEB/', // ✅ fixed for GitHub Pages
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
         display: 'minimal-ui',
-        icon: 'src/images/logo.png', // Make sure this exists or update path
+        icon: 'src/images/logo.png',
       },
     },
     `gatsby-plugin-offline`,
